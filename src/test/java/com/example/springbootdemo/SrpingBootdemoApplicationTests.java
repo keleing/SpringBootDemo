@@ -1,5 +1,7 @@
 package com.example.springbootdemo;
 
+import com.example.springbootdemo.entity.UserExample;
+import com.example.springbootdemo.mapper.UserMapper;
 import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,6 +16,8 @@ class SrpingBootdemoApplicationTests {
 
     @Resource
     DataSource dataSource;
+    @Resource
+    UserMapper userMapper;
 
     @Resource
     RedisTemplate redisTemplate;
@@ -21,7 +25,7 @@ class SrpingBootdemoApplicationTests {
     @Test
     void contextLoads() throws SQLException {
         System.out.println(dataSource.getConnection());
-        redisTemplate.opsForValue().set("1", "2");
+
     }
 
 }
